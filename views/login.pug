@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    .container
+        br
+        h1 #{title}
+        form(method="POST",action="/client/login")
+            #form-group
+                label Enter Group Name
+                input.form-control(name='groupname',type='text')
+            
+          
+            br
+            input.btn.btn-primary(type='submit',value="Login") 

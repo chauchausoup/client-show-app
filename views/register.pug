@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    .container
+        br
+        h1 #{title}
+        form(method="POST",action="/client/register")
+            #form-group
+                label Name of Admin:
+                input.form-control(name='username',type='text')
+            #form-group
+                label Group Name:
+                input.form-control(name='groupname',type='text')
+            #form-group
+                label Location of Group:
+                input.form-control(name='locationname',type='text')
+            #form-group
+                label Phone No of Admin:
+                input.form-control(name='phoneno',type='text')
+            #form-group
+                label Description for group:
+                textarea.form-control(name='description')
+            
+          
+            br
+            input.btn.btn-primary(type='submit',value="Register") 

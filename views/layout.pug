@@ -1,0 +1,65 @@
+doctype html
+html
+    head
+        title Client Show App
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/style.css')
+
+
+    body
+        nav.navbar.navbar-inverse
+            .container-fluid
+                .navbar-header
+                    button.navbar-toggle(type='button',data-toggle='collapse', data-target='#myNavbar')
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='/') Client Show App
+                .collapse.navbar-collapse#myNavbar     
+                    ul.nav.navbar-nav
+                        
+                        if user
+
+                            li 
+                                a(href='/client/show') Show
+
+                    ul.nav.navbar-nav.navbar-right  
+
+                        if user
+                            li
+                                a(href='/client/logout') Logout
+
+                        else  
+                            li
+                                a(href='/client/register') 
+                                    span.glyphicon.glyphicon-user 
+                                    |   SignUp
+                            li
+                                a(href='/client/login') 
+                                    span.glyphicon.glyphicon-user 
+                                    |   Login
+
+        .container
+            !=messages('message',locals)
+            if errors
+                each error, i in errors
+                    div(class='alert alert-danger') #{error.msg}
+
+
+
+
+        block content
+            .container
+                br 
+                hr
+                footer
+                p Copyright &copy; 2020
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+        script(src='/js/main.js')
+
+
+
+        

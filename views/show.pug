@@ -1,0 +1,14 @@
+extends layout
+
+
+block content
+    br
+    .container
+        #container-header
+            ul.list-group
+                each article,i in clients
+                    li.list-group-item
+                        a(href="/client/show/"+article._id)= article.username
+            
+
+    
